@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce-search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "index-products": "node elastic/indexer.js",
+    "delete-products": "node elastic/delete.js",
+    "start": "node app.js",
+    "bypass": "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass",
+    "build-client": "cd client && npm run build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.18.2",
+    "@vitejs/plugin-react": "^4.6.0",
+    "axios": "^1.10.0",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.3"
+  }
+}

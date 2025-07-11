@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Apple iPhone 14 Pro phone",
+    "description": "128GB, Deep Purple",
+    "category": "Smartphones",
+    "brand": "Apple",
+    "price": 1299.99,
+    "stock": 34,
+    "rating": 4.8
+  },
+  {
+    "id": "2",
+    "name": "Samsung Galaxy S23 phone",
+    "description": "256GB, Phantom Black",
+    "category": "Smartphones",
+    "brand": "Samsung",
+    "price": 1099.00,
+    "stock": 50,
+    "rating": 4.5
+  },
+  {
+    "id": "3",
+    "name": "Sony WH-1000XM5",
+    "description": "Noise Cancelling Wireless Headphones",
+    "category": "Headphones",
+    "brand": "Sony",
+    "price": 349.99,
+    "stock": 20,
+    "rating": 4.7
+  }
+]
