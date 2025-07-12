@@ -38,12 +38,13 @@ function App() {
 
     const handleEnter = (e) => {
         if(e.key == "Enter") {
-            const val = e.target.value;
+            setSuggestions([]);
             fetchProducts(query);
         }
     }
 
     const handleSelect = (query) => {
+        setSuggestions([]);
         fetchProducts(query);
     }
 
