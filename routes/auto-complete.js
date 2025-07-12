@@ -4,9 +4,7 @@ const {Client} = require("@elastic/elasticsearch");
 const client = new Client({node: "http://localhost:9200"});
 
 router.get("/", async (req, res) => {
-    console.log("Inside Autocomplete API call");
     const {query} = req.query;
-    console.log(query);
     try {
     const response = await client.search({
         index: "products",
@@ -20,7 +18,6 @@ router.get("/", async (req, res) => {
             }
         }
     });
-    console.log(response);
     res.json(response.suggest.product_suggest[0].options.map(ele => ele.text));
     }
     catch(error) {
