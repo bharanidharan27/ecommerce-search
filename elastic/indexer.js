@@ -2,7 +2,7 @@ const {Client} = require('@elastic/elasticsearch');
 const fs = require('fs');
 
 const client = new Client({node: 'http:localhost:9200'});
-const products = JSON.parse(fs.readFileSync('./data/products.json', 'utf-8'));
+const products = JSON.parse(fs.readFileSync('./data/mock-data.json', 'utf-8'));
 
 async function createIndex() {
     const exists = await client.indices.exists({index: 'products'});

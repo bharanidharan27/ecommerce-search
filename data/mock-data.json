@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "1",
+    "name": "Apple iPhone 15 Pro Max",
+    "description": "512GB, Titanium Blue, A17 Bionic",
+    "category": "Smartphones",
+    "brand": "Apple",
+    "price": 1499.99,
+    "stock": 28,
+    "rating": 4.9
+  },
+  {
+    "id": "2",
+    "name": "Samsung Galaxy S24 Ultra",
+    "description": "256GB, Cosmic Black, Snapdragon 8 Gen 3",
+    "category": "Smartphones",
+    "brand": "Samsung",
+    "price": 1299.00,
+    "stock": 45,
+    "rating": 4.7
+  },
+  {
+    "id": "3",
+    "name": "Google Pixel 8 Pro",
+    "description": "128GB, Obsidian, Tensor G3",
+    "category": "Smartphones",
+    "brand": "Google",
+    "price": 999.00,
+    "stock": 38,
+    "rating": 4.6
+  },
+  {
+    "id": "4",
+    "name": "Dell XPS 15",
+    "description": "Intel i9, 32GB RAM, 1TB SSD, RTX 4070",
+    "category": "Laptops",
+    "brand": "Dell",
+    "price": 2299.99,
+    "stock": 15,
+    "rating": 4.8
+  },
+  {
+    "id": "5",
+    "name": "Sony WH-1000XM5",
+    "description": "Noise Cancelling Wireless Headphones, Black",
+    "category": "Headphones",
+    "brand": "Sony",
+    "price": 349.99,
+    "stock": 50,
+    "rating": 4.7
+  },
+  {
+    "id": "6",
+    "name": "Apple Watch Series 9",
+    "description": "GPS + Cellular, Midnight Aluminum Case, Sport Band",
+    "category": "Smartwatches",
+    "brand": "Apple",
+    "price": 429.00,
+    "stock": 60,
+    "rating": 4.6
+  },
+  {
+    "id": "7",
+    "name": "Microsoft Surface Pro 9",
+    "description": "13-inch, Intel i7, 16GB RAM, 512GB SSD",
+    "category": "Tablets",
+    "brand": "Microsoft",
+    "price": 1499.00,
+    "stock": 20,
+    "rating": 4.5
+  },
+  {
+    "id": "8",
+    "name": "OnePlus 12",
+    "description": "256GB, Flowy Emerald, Snapdragon 8 Gen 3",
+    "category": "Smartphones",
+    "brand": "OnePlus",
+    "price": 799.00,
+    "stock": 55,
+    "rating": 4.5
+  },
+  {
+    "id": "9",
+    "name": "HP Spectre x360 14",
+    "description": "Intel i7, 16GB RAM, 1TB SSD, Convertible",
+    "category": "Laptops",
+    "brand": "HP",
+    "price": 1799.00,
+    "stock": 18,
+    "rating": 4.7
+  },
+  {
+    "id": "10",
+    "name": "Bose QuietComfort Ultra Headphones",
+    "description": "Immersive Audio, Silver",
+    "category": "Headphones",
+    "brand": "Bose",
+    "price": 429.00,
+    "stock": 40,
+    "rating": 4.8
+  },
+  {
+    "id": "11",
+    "name": "Samsung Galaxy Watch 6 Classic",
+    "description": "47mm, Black, LTE",
+    "category": "Smartwatches",
+    "brand": "Samsung",
+    "price": 399.99,
+    "stock": 55,
+    "rating": 4.5
+  },
+  {
+    "id": "12",
+    "name": "Apple iPad Air (5th Gen)",
+    "description": "256GB, Space Gray, M1 Chip",
+    "category": "Tablets",
+    "brand": "Apple",
+    "price": 749.00,
+    "stock": 35,
+    "rating": 4.7
+  },
+  {
+    "id": "13",
+    "name": "Xiaomi 14 Pro",
+    "description": "512GB, Ceramic White, Snapdragon 8 Gen 3",
+    "category": "Smartphones",
+    "brand": "Xiaomi",
+    "price": 899.99,
+    "stock": 30,
+    "rating": 4.6
+  },
+  {
+    "id": "14",
+    "name": "Lenovo ThinkPad X1 Carbon Gen 12",
+    "description": "Intel Core Ultra 7, 16GB RAM, 512GB SSD",
+    "category": "Laptops",
+    "brand": "Lenovo",
+    "price": 1899.00,
+    "stock": 12,
+    "rating": 4.7
+  },
+  {
+    "id": "15",
+    "name": "Jabra Elite 8 Active",
+    "description": "True Wireless Earbuds, Navy",
+    "category": "Headphones",
+    "brand": "Jabra",
+    "price": 199.99,
+    "stock": 65,
+    "rating": 4.5
+  },
+  {
+    "id": "16",
+    "name": "Google Pixel Watch 2",
+    "description": "Wi-Fi, Polished Silver Aluminum Case",
+    "category": "Smartwatches",
+    "brand": "Google",
+    "price": 349.99,
+    "stock": 70,
+    "rating": 4.4
+  },
+  {
+    "id": "17",
+    "name": "Samsung Galaxy Tab S9 Ultra",
+    "description": "14.6-inch, 512GB, AMOLED Display",
+    "category": "Tablets",
+    "brand": "Samsung",
+    "price": 1199.00,
+    "stock": 10,
+    "rating": 4.8
+  },
+  {
+    "id": "18",
+    "name": "Apple iPhone SE (2024)",
+    "description": "64GB, Midnight, A15 Bionic",
+    "category": "Smartphones",
+    "brand": "Apple",
+    "price": 429.00,
+    "stock": 60,
+    "rating": 4.4
+  },
+  {
+    "id": "19",
+    "name": "Acer Swift Go 14",
+    "description": "Intel Core Ultra 5, 16GB RAM, 512GB SSD",
+    "category": "Laptops",
+    "brand": "Acer",
+    "price": 899.00,
+    "stock": 25,
+    "rating": 4.3
+  },
+  {
+    "id": "20",
+    "name": "Sennheiser Momentum 4 Wireless",
+    "description": "Over-Ear Headphones, Black",
+    "category": "Headphones",
+    "brand": "Sennheiser",
+    "price": 379.00,
+    "stock": 45,
+    "rating": 4.6
+  },
+  {
+    "id": "21",
+    "name": "Garmin Forerunner 965",
+    "description": "GPS Running Smartwatch with AMOLED Display",
+    "category": "Smartwatches",
+    "brand": "Garmin",
+    "price": 599.99,
+    "stock": 30,
+    "rating": 4.7
+  },
+  {
+    "id": "22",
+    "name": "Amazon Fire Max 11",
+    "description": "64GB, with Stylus Pen and Keyboard Case",
+    "category": "Tablets",
+    "brand": "Amazon",
+    "price": 279.99,
+    "stock": 80,
+    "rating": 4.0
+  },
+  {
+    "id": "23",
+    "name": "Samsung Galaxy Z Fold 6",
+    "description": "512GB, Platinum Gray, Foldable",
+    "category": "Smartphones",
+    "brand": "Samsung",
+    "price": 1799.99,
+    "stock": 15,
+    "rating": 4.8
+  },
+  {
+    "id": "24",
+    "name": "ASUS ROG Zephyrus G16",
+    "description": "Intel Core i9, 32GB RAM, 2TB SSD, RTX 4080",
+    "category": "Laptops",
+    "brand": "ASUS",
+    "price": 2499.00,
+    "stock": 8,
+    "rating": 4.9
+  },
+  {
+    "id": "25",
+    "name": "Apple AirPods Pro (2nd Gen)",
+    "description": "MagSafe Charging Case, USB-C",
+    "category": "Headphones",
+    "brand": "Apple",
+    "price": 249.00,
+    "stock": 75,
+    "rating": 4.7
+  },
+  {
+    "id": "26",
+    "name": "Fitbit Charge 6",
+    "description": "Advanced Fitness Tracker + ECG",
+    "category": "Smartwatches",
+    "brand": "Fitbit",
+    "price": 159.95,
+    "stock": 90,
+    "rating": 4.3
+  },
+  {
+    "id": "27",
+    "name": "Lenovo Tab P12 Pro",
+    "description": "12.6-inch, 256GB, OLED Display",
+    "category": "Tablets",
+    "brand": "Lenovo",
+    "price": 699.00,
+    "stock": 25,
+    "rating": 4.6
+  },
+  {
+    "id": "28",
+    "name": "Google Pixel 8a",
+    "description": "128GB, Bay, Tensor G3",
+    "category": "Smartphones",
+    "brand": "Google",
+    "price": 499.00,
+    "stock": 70,
+    "rating": 4.5
+  },
+  {
+    "id": "29",
+    "name": "MSI Stealth 16 Mercedes-AMG",
+    "description": "Intel Core i7, 16GB RAM, 1TB SSD, RTX 4060",
+    "category": "Laptops",
+    "brand": "MSI",
+    "price": 1999.00,
+    "stock": 10,
+    "rating": 4.8
+  },
+  {
+    "id": "30",
+    "name": "Audio-Technica ATH-M50xBT2",
+    "description": "Wireless Over-Ear Headphones, Black",
+    "category": "Headphones",
+    "brand": "Audio-Technica",
+    "price": 199.00,
+    "stock": 60,
+    "rating": 4.6
+  },
+  {
+    "id": "31",
+    "name": "Amazfit GTR 4",
+    "description": "Fitness Smartwatch with GPS and Heart Rate",
+    "category": "Smartwatches",
+    "brand": "Amazfit",
+    "price": 199.99,
+    "stock": 80,
+    "rating": 4.2
+  },
+  {
+    "id": "32",
+    "name": "Microsoft Surface Go 4",
+    "description": "10.5-inch, 128GB, Intel N200",
+    "category": "Tablets",
+    "brand": "Microsoft",
+    "price": 549.00,
+    "stock": 30,
+    "rating": 4.3
+  },
+  {
+    "id": "33",
+    "name": "OnePlus 12R",
+    "description": "128GB, Iron Gray, Snapdragon 8 Gen 2",
+    "category": "Smartphones",
+    "brand": "OnePlus",
+    "price": 549.00,
+    "stock": 65,
+    "rating": 4.4
+  },
+  {
+    "id": "34",
+    "name": "Razer Blade 16",
+    "description": "Intel i9, 32GB RAM, 1TB SSD, RTX 4090",
+    "category": "Laptops",
+    "brand": "Razer",
+    "price": 2999.00,
+    "stock": 7,
+    "rating": 4.9
+  },
+  {
+    "id": "35",
+    "name": "Skullcandy Crusher ANC 2",
+    "description": "Sense of Bass Haptic Bass Headphones, Black",
+    "category": "Headphones",
+    "brand": "Skullcandy",
+    "price": 229.99,
+    "stock": 70,
+    "rating": 4.3
+  },
+  {
+    "id": "36",
+    "name": "Huawei Watch GT 4",
+    "description": "46mm, Green, Long Battery Life",
+    "category": "Smartwatches",
+    "brand": "Huawei",
+    "price": 249.00,
+    "stock": 60,
+    "rating": 4.4
+  },
+  {
+    "id": "37",
+    "name": "Xiaomi Pad 6",
+    "description": "11-inch, 128GB, Snapdragon 870",
+    "category": "Tablets",
+    "brand": "Xiaomi",
+    "price": 329.00,
+    "stock": 40,
+    "rating": 4.2
+  },
+  {
+    "id": "38",
+    "name": "Xiaomi Redmi Note 13 Pro+",
+    "description": "256GB, Fusion Black, Dimensity 7200 Ultra",
+    "category": "Smartphones",
+    "brand": "Xiaomi",
+    "price": 399.99,
+    "stock": 80,
+    "rating": 4.3
+  },
+  {
+    "id": "39",
+    "name": "LG Gram 17",
+    "description": "Intel i7, 16GB RAM, 1TB SSD, Lightweight",
+    "category": "Laptops",
+    "brand": "LG",
+    "price": 1599.00,
+    "stock": 18,
+    "rating": 4.6
+  },
+  {
+    "id": "40",
+    "name": "Beats Studio Buds +",
+    "description": "True Wireless Noise Cancelling Earbuds, Ivory",
+    "category": "Headphones",
+    "brand": "Beats",
+    "price": 169.99,
+    "stock": 85,
+    "rating": 4.5
+  },
+  {
+    "id": "41",
+    "name": "Mobvoi TicWatch Pro 5",
+    "description": "Wear OS, Dual Display, Snapdragon W5+ Gen 1",
+    "category": "Smartwatches",
+    "brand": "Mobvoi",
+    "price": 349.99,
+    "stock": 45,
+    "rating": 4.3
+  },
+  {
+    "id": "42",
+    "name": "Google Pixel Tablet",
+    "description": "11-inch, 128GB, with Charging Speaker Dock",
+    "category": "Tablets",
+    "brand": "Google",
+    "price": 499.00,
+    "stock": 30,
+    "rating": 4.5
+  },
+  {
+    "id": "43",
+    "name": "Apple iPhone 15",
+    "description": "256GB, Pink, A16 Bionic",
+    "category": "Smartphones",
+    "brand": "Apple",
+    "price": 899.00,
+    "stock": 40,
+    "rating": 4.7
+  },
+  {
+    "id": "44",
+    "name": "Samsung Galaxy Book4 Pro",
+    "description": "Intel Core Ultra 7, 16GB RAM, 512GB SSD",
+    "category": "Laptops",
+    "brand": "Samsung",
+    "price": 1699.00,
+    "stock": 15,
+    "rating": 4.7
+  },
+  {
+    "id": "45",
+    "name": "JBL Tour ONE M2",
+    "description": "Adaptive Noise Cancelling Headphones, Black",
+    "category": "Headphones",
+    "brand": "JBL",
+    "price": 299.95,
+    "stock": 50,
+    "rating": 4.6
+  },
+  {
+    "id": "46",
+    "name": "Apple Watch Ultra 2",
+    "description": "GPS + Cellular, Ocean Band, Titanium Case",
+    "category": "Smartwatches",
+    "brand": "Apple",
+    "price": 799.00,
+    "stock": 20,
+    "rating": 4.9
+  },
+  {
+    "id": "47",
+    "name": "Lenovo Tab M10 Plus (3rd Gen)",
+    "description": "10.6-inch, 64GB, Android",
+    "category": "Tablets",
+    "brand": "Lenovo",
+    "price": 199.99,
+    "stock": 90,
+    "rating": 4.0
+  },
+  {
+    "id": "48",
+    "name": "Samsung Galaxy A55",
+    "description": "128GB, Awesome Lilac, Exynos 1480",
+    "category": "Smartphones",
+    "brand": "Samsung",
+    "price": 479.00,
+    "stock": 75,
+    "rating": 4.4
+  },
+  {
+    "id": "49",
+    "name": "Dell Inspiron 16 Plus",
+    "description": "Intel i7, 16GB RAM, 1TB SSD, RTX 3050",
+    "category": "Laptops",
+    "brand": "Dell",
+    "price": 1299.99,
+    "stock": 20,
+    "rating": 4.5
+  },
+  {
+    "id": "50",
+    "name": "Sony WF-1000XM5",
+    "description": "True Wireless Noise Cancelling Earbuds, Silver",
+    "category": "Headphones",
+    "brand": "Sony",
+    "price": 299.99,
+    "stock": 60,
+    "rating": 4.8
+  },
+  {
+    "id": "51",
+    "name": "Samsung Galaxy Watch 6",
+    "description": "44mm, Graphite, Bluetooth",
+    "category": "Smartwatches",
+    "brand": "Samsung",
+    "price": 299.99,
+    "stock": 65,
+    "rating": 4.4
+  },
+  {
+    "id": "52",
+    "name": "Apple iPad Pro 12.9-inch (6th Gen)",
+    "description": "512GB, Silver, M2 Chip",
+    "category": "Tablets",
+    "brand": "Apple",
+    "price": 1599.00,
+    "stock": 12,
+    "rating": 4.9
+  },
+  {
+    "id": "53",
+    "name": "Google Pixel Fold 2",
+    "description": "256GB, Porcelain, Tensor G3",
+    "category": "Smartphones",
+    "brand": "Google",
+    "price": 1899.00,
+    "stock": 12,
+    "rating": 4.8
+  },
+  {
+    "id": "54",
+    "name": "HP Envy x360 15",
+    "description": "AMD Ryzen 7, 16GB RAM, 512GB SSD, Convertible",
+    "category": "Laptops",
+    "brand": "HP",
+    "price": 1099.00,
+    "stock": 22,
+    "rating": 4.6
+  },
+  {
+    "id": "55",
+    "name": "Bose QuietComfort Earbuds II",
+    "description": "Noise Cancelling Earbuds, Soapstone",
+    "category": "Headphones",
+    "brand": "Bose",
+    "price": 279.00,
+    "stock": 55,
+    "rating": 4.7
+  },
+  {
+    "id": "56",
+    "name": "Garmin Venu 3",
+    "description": "GPS Smartwatch with Advanced Health Monitoring",
+    "category": "Smartwatches",
+    "brand": "Garmin",
+    "price": 449.99,
+    "stock": 40,
+    "rating": 4.6
+  },
+  {
+    "id": "57",
+    "name": "Samsung Galaxy Tab A9+",
+    "description": "11-inch, 64GB, Wi-Fi",
+    "category": "Tablets",
+    "brand": "Samsung",
+    "price": 219.99,
+    "stock": 70,
+    "rating": 4.1
+  },
+  {
+    "id": "58",
+    "name": "OnePlus Nord 4",
+    "description": "128GB, Gray Shimmer, Dimensity 8300-Ultra",
+    "category": "Smartphones",
+    "brand": "OnePlus",
+    "price": 329.00,
+    "stock": 90,
+    "rating": 4.2
+  },
+  {
+    "id": "59",
+    "name": "Lenovo Yoga 7i 16",
+    "description": "Intel i5, 12GB RAM, 512GB SSD, 2-in-1",
+    "category": "Laptops",
+    "brand": "Lenovo",
+    "price": 949.00,
+    "stock": 28,
+    "rating": 4.4
+  },
+  {
+    "id": "60",
+    "name": "Jabra Elite 10",
+    "description": "Comfort-Fit True Wireless Earbuds, Cream",
+    "category": "Headphones",
+    "brand": "Jabra",
+    "price": 249.99,
+    "stock": 50,
+    "rating": 4.6
+  },
+  {
+    "id": "61",
+    "name": "Apple Watch SE (2nd Gen)",
+    "description": "GPS, Starlight Aluminum Case, Sport Loop",
+    "category": "Smartwatches",
+    "brand": "Apple",
+    "price": 279.00,
+    "stock": 70,
+    "rating": 4.5
+  },
+  {
+    "id": "62",
+    "name": "Amazon Fire HD 10",
+    "description": "32GB, 10.1-inch, Kids Edition",
+    "category": "Tablets",
+    "brand": "Amazon",
+    "price": 199.99,
+    "stock": 95,
+    "rating": 4.0
+  },
+  {
+    "id": "63",
+    "name": "Xiaomi 14 Ultra",
+    "description": "1TB, Dragon Crystal Blue, Snapdragon 8 Gen 3",
+    "category": "Smartphones",
+    "brand": "Xiaomi",
+    "price": 1199.99,
+    "stock": 25,
+    "rating": 4.8
+  },
+  {
+    "id": "64",
+    "name": "ASUS ZenBook 14 OLED",
+    "description": "Intel Core Ultra 7, 16GB RAM, 1TB SSD",
+    "category": "Laptops",
+    "brand": "ASUS",
+    "price": 1399.00,
+    "stock": 17,
+    "rating": 4.7
+  },
+  {
+    "id": "65",
+    "name": "Sennheiser HD 660S2",
+    "description": "Audiophile Headphone, Open-Back",
+    "category": "Headphones",
+    "brand": "Sennheiser",
+    "price": 599.00,
+    "stock": 30,
+    "rating": 4.8
+  },
+  {
+    "id": "66",
+    "name": "Fitbit Versa 4",
+    "description": "Fitness Smartwatch with Daily Readiness Score",
+    "category": "Smartwatches",
+    "brand": "Fitbit",
+    "price": 199.95,
+    "stock": 80,
+    "rating": 4.2
+  },
+  {
+    "id": "67",
+    "name": "Lenovo Tab M9",
+    "description": "9-inch, 64GB, Android",
+    "category": "Tablets",
+    "brand": "Lenovo",
+    "price": 149.99,
+    "stock": 100,
+    "rating": 3.9
+  },
+  {
+    "id": "68",
+    "name": "Apple iPhone 15 Pro",
+    "description": "256GB, Natural Titanium, A17 Bionic",
+    "category": "Smartphones",
+    "brand": "Apple",
+    "price": 1199.99,
+    "stock": 32,
+    "rating": 4.8
+  },
+  {
+    "id": "69",
+    "name": "Microsoft Surface Laptop Studio 2",
+    "description": "Intel i7, 32GB RAM, 1TB SSD, RTX 4060",
+    "category": "Laptops",
+    "brand": "Microsoft",
+    "price": 2799.00,
+    "stock": 9,
+    "rating": 4.9
+  },
+  {
+    "id": "70",
+    "name": "Audio-Technica ATH-WP900",
+    "description": "Portable Wooden On-Ear Headphones",
+    "category": "Headphones",
+    "brand": "Audio-Technica",
+    "price": 649.00,
+    "stock": 20,
+    "rating": 4.7
+  },
+  {
+    "id": "71",
+    "name": "Amazfit Balance",
+    "description": "Smartwatch with Body Composition Analysis",
+    "category": "Smartwatches",
+    "brand": "Amazfit",
+    "price": 249.99,
+    "stock": 50,
+    "rating": 4.4
+  },
+  {
+    "id": "72",
+    "name": "Google Pixel Tablet (2nd Gen)",
+    "description": "11-inch, 256GB, Tensor G3",
+    "category": "Tablets",
+    "brand": "Google",
+    "price": 599.00,
+    "stock": 25,
+    "rating": 4.6
+  },
+  {
+    "id": "73",
+    "name": "Samsung Galaxy S24+",
+    "description": "512GB, Marble Gray, Exynos 2400",
+    "category": "Smartphones",
+    "brand": "Samsung",
+    "price": 1099.00,
+    "stock": 48,
+    "rating": 4.6
+  },
+  {
+    "id": "74",
+    "name": "HP Pavilion Aero 13",
+    "description": "AMD Ryzen 5, 8GB RAM, 256GB SSD, Lightweight",
+    "category": "Laptops",
+    "brand": "HP",
+    "price": 749.00,
+    "stock": 35,
+    "rating": 4.3
+  },
+  {
+    "id": "75",
+    "name": "Skullcandy Indy Evo",
+    "description": "True Wireless Earbuds, Pure Mint",
+    "category": "Headphones",
+    "brand": "Skullcandy",
+    "price": 69.99,
+    "stock": 120,
+    "rating": 3.9
+  },
+  {
+    "id": "76",
+    "name": "Huawei Watch Fit 3",
+    "description": "Ultra-thin Smartwatch, Pink",
+    "category": "Smartwatches",
+    "brand": "Huawei",
+    "price": 159.00,
+    "stock": 70,
+    "rating": 4.1
+  },
+  {
+    "id": "77",
+    "name": "Xiaomi Redmi Pad SE",
+    "description": "11-inch, 128GB, Android",
+    "category": "Tablets",
+    "brand": "Xiaomi",
+    "price": 219.00,
+    "stock": 50,
+    "rating": 4.0
+  },
+  {
+    "id": "78",
+    "name": "Google Pixel 8",
+    "description": "256GB, Rose, Tensor G3",
+    "category": "Smartphones",
+    "brand": "Google",
+    "price": 799.00,
+    "stock": 50,
+    "rating": 4.5
+  },
+  {
+    "id": "79",
+    "name": "Acer Predator Helios 16",
+    "description": "Intel i9, 32GB RAM, 1TB SSD, RTX 4070",
+    "category": "Laptops",
+    "brand": "Acer",
+    "price": 1999.00,
+    "stock": 10,
+    "rating": 4.7
+  },
+  {
+    "id": "80",
+    "name": "JBL Reflect Flow PRO+",
+    "description": "Adaptive Noise Cancelling Sport Earbuds, Blue",
+    "category": "Headphones",
+    "brand": "JBL",
+    "price": 179.95,
+    "stock": 60,
+    "rating": 4.4
+  },
+  {
+    "id": "81",
+    "name": "Mobvoi TicWatch E3",
+    "description": "Wear OS, Snapdragon Wear 4100",
+    "category": "Smartwatches",
+    "brand": "Mobvoi",
+    "price": 199.99,
+    "stock": 55,
+    "rating": 4.0
+  },
+  {
+    "id": "82",
+    "name": "Microsoft Surface Pro X",
+    "description": "13-inch, 256GB, SQ2 Processor",
+    "category": "Tablets",
+    "brand": "Microsoft",
+    "price": 999.00,
+    "stock": 18,
+    "rating": 4.2
+  },
+  {
+    "id": "83",
+    "name": "OnePlus Ace 3",
+    "description": "512GB, Gold, Snapdragon 8 Gen 2",
+    "category": "Smartphones",
+    "brand": "OnePlus",
+    "price": 699.00,
+    "stock": 35,
+    "rating": 4.5
+  },
+  {
+    "id": "84",
+    "name": "MSI Katana 15",
+    "description": "Intel i7, 16GB RAM, 512GB SSD, RTX 4050",
+    "category": "Laptops",
+    "brand": "MSI",
+    "price": 1199.00,
+    "stock": 25,
+    "rating": 4.4
+  },
+  {
+    "id": "85",
+    "name": "Audio-Technica ATH-AD700X",
+    "description": "Open-Air Dynamic Headphones",
+    "category": "Headphones",
+    "brand": "Audio-Technica",
+    "price": 129.00,
+    "stock": 70,
+    "rating": 4.3
+  },
+  {
+    "id": "86",
+    "name": "Garmin Fenix 7 Sapphire Solar",
+    "description": "Rugged GPS Smartwatch, Titanium",
+    "category": "Smartwatches",
+    "brand": "Garmin",
+    "price": 799.99,
+    "stock": 15,
+    "rating": 4.8
+  },
+  {
+    "id": "87",
+    "name": "Apple iPad mini (6th Gen)",
+    "description": "64GB, Purple, A15 Bionic",
+    "category": "Tablets",
+    "brand": "Apple",
+    "price": 499.00,
+    "stock": 45,
+    "rating": 4.7
+  },
+  {
+    "id": "88",
+    "name": "Xiaomi Poco X6 Pro",
+    "description": "256GB, Yellow, Dimensity 8300-Ultra",
+    "category": "Smartphones",
+    "brand": "Xiaomi",
+    "price": 359.00,
+    "stock": 68,
+    "rating": 4.3
+  },
+  {
+    "id": "89",
+    "name": "Razer Blade 14",
+    "description": "AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 4060",
+    "category": "Laptops",
+    "brand": "Razer",
+    "price": 2099.00,
+    "stock": 10,
+    "rating": 4.8
+  },
+  {
+    "id": "90",
+    "name": "Sony LinkBuds S",
+    "description": "Ultra-small Noise Cancelling Earbuds, White",
+    "category": "Headphones",
+    "brand": "Sony",
+    "price": 199.99,
+    "stock": 65,
+    "rating": 4.6
+  },
+  {
+    "id": "91",
+    "name": "Samsung Galaxy Watch FE",
+    "description": "40mm, Pink Gold, Bluetooth",
+    "category": "Smartwatches",
+    "brand": "Samsung",
+    "price": 199.99,
+    "stock": 80,
+    "rating": 4.1
+  },
+  {
+    "id": "92",
+    "name": "Xiaomi Redmi Pad Pro",
+    "description": "12.1-inch, 256GB, Snapdragon 8 Gen 2",
+    "category": "Tablets",
+    "brand": "Xiaomi",
+    "price": 449.00,
+    "stock": 25,
+    "rating": 4.5
+  },
+  {
+    "id": "93",
+    "name": "Apple iPhone 15 Plus",
+    "description": "128GB, Green, A16 Bionic",
+    "category": "Smartphones",
+    "brand": "Apple",
+    "price": 999.00,
+    "stock": 30,
+    "rating": 4.6
+  },
+  {
+    "id": "94",
+    "name": "Lenovo Legion Pro 7i",
+    "description": "Intel i9, 32GB RAM, 2TB SSD, RTX 4090",
+    "category": "Laptops",
+    "brand": "Lenovo",
+    "price": 2899.00,
+    "stock": 8,
+    "rating": 4.9
+  },
+  {
+    "id": "95",
+    "name": "Bose SoundLink Flex",
+    "description": "Bluetooth Portable Speaker, Stone Blue",
+    "category": "Audio Speakers",
+    "brand": "Bose",
+    "price": 149.00,
+    "stock": 70,
+    "rating": 4.5
+  },
+  {
+    "id": "96",
+    "name": "OnePlus Nord CE 4",
+    "description": "256GB, Dark Chrome, Snapdragon 7 Gen 3",
+    "category": "Smartphones",
+    "brand": "OnePlus",
+    "price": 299.00,
+    "stock": 95,
+    "rating": 4.1
+  },
+  {
+    "id": "97",
+    "name": "HP Omen 16",
+    "description": "AMD Ryzen 7, 16GB RAM, 1TB SSD, RTX 4060",
+    "category": "Laptops",
+    "brand": "HP",
+    "price": 1599.00,
+    "stock": 16,
+    "rating": 4.6
+  },
+  {
+    "id": "98",
+    "name": "JBL Flip 6",
+    "description": "Portable Waterproof Speaker, Black",
+    "category": "Audio Speakers",
+    "brand": "JBL",
+    "price": 129.95,
+    "stock": 85,
+    "rating": 4.4
+  },
+  {
+    "id": "99",
+    "name": "Xiaomi Redmi Note 13",
+    "description": "128GB, Ice Blue, Snapdragon 685",
+    "category": "Smartphones",
+    "brand": "Xiaomi",
+    "price": 229.00,
+    "stock": 100,
+    "rating": 4.0
+  },
+  {
+    "id": "100",
+    "name": "Logitech MX Master 3S",
+    "description": "Performance Wireless Mouse, Graphite",
+    "category": "Computer Accessories",
+    "brand": "Logitech",
+    "price": 99.99,
+    "stock": 150,
+    "rating": 4.8
+  }
+]
