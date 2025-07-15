@@ -4,11 +4,12 @@ function App() {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [results, setResults] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const fetchSuggestions = async (query) => {
         if(query.length < 2) return setSuggestions([]);
         try {
-            const res = await fetch(`/api/autocomplete?query=${query}`);
+            const res = await fetch(`/api/autocomplete?query=${encodeURIComponent(query)}`);
             const data = await res.json();
             setSuggestions(data);
         }
@@ -20,9 +21,12 @@ function App() {
 
     const fetchProducts = async (query) => {
         try {
-            const response = await fetch(`/api/search?query=${query}`);
+            if(!query.trim()) return;
+            setLoading(true);
+            const response = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
             const data = await response.json();
-            setResults(data);
+            setResults(data || []);
+            setLoading(false);
         }
         catch(error) {
             console.error('Search Failed', error);
@@ -49,13 +53,13 @@ function App() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
+        <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center">
             <h1 className="text-2xl font-bold mb-6">E-commerce Search</h1>
 
             <div className="w-full max-w-2xl relative">
                 <input
                 type="text"
-                className="w-full p-3 border rounded shadow"
+                className="w-full p-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Search for products..."
                 value={query}
                 onChange={handleInput}
@@ -76,21 +80,27 @@ function App() {
                 )}
             </div>
 
-            <div className="mt-6 w-full max-w-2xl space-y-4">
-                {results.length === 0 ? (
-                <p className="text-gray-600 text-center">No products to show</p>
-                ) : (
-                results.map((p, i) => (
-                    <div key={i} className="bg-white p-4 rounded shadow">
-                    <h2 className="text-lg font-semibold">{p.name}</h2>
-                    <p className="text-gray-600">{p.description || "No description"}</p>
-                    <p className="text-sm text-gray-500">
-                        {p.brand} | ₹{p.price} | Rating: {p.rating}
-                    </p>
-                    </div>
-                ))
-                )}
-            </div>
+            {loading && <p className='mt-4 text-center text-gray-500'>Loading...</p>}
+
+            {!loading && results.length > 0 && (
+                <ul className='mt-6 space-y-4'>
+                    {results.map((item) => (
+                        <li key={item.id} className='p-4 bg-white rounded shadow'>
+                            <h2 className="text-lg font-semibold">{item.name}</h2>
+                            <p className="text-sm text-gray-600">{item.description}</p>
+                            <div className="text-sm mt-2 flex gap-4">
+                                <span className='text-blue-600 font-medium'>Price: {item.price}</span>
+                                <span>Brand: {item.brand}</span>
+                                <span>Rating: {item.rating}</span>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {!loading && results.length === 0 && suggestions.length === 0 && query && (
+                <p className="text-gray-600 text-center">No Results found.</p>
+            )}
         </div>
     );
 }
