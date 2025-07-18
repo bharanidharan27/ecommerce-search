@@ -5,12 +5,13 @@ const client = new Client({node: "http://localhost:9200"});
 
 router.get("/", async (req, res) => {
     const {query} = req.query;
+    const decodedQuery = decodeURIComponent(query);
     try {
     const response = await client.search({
         index: "products",
         suggest: {
             product_suggest: {
-                prefix: query,
+                prefix: decodedQuery,
                 completion: {
                     field: "suggest",
                     fuzzy: true
