@@ -55,7 +55,6 @@ router.get('/', async (req, res) => {
             if(priceRange !== "undefined") {
                 const [gte, lte] = priceRange.split("-");
                 if(jsonBody.query.bool.must === undefined) jsonBody.query.bool.must = {};
-                console.log(JSON.stringify(jsonBody));
                 jsonBody.query.bool.must.range = {
                     price: {
                         "gte": gte,
@@ -71,7 +70,6 @@ router.get('/', async (req, res) => {
                     }
                 };
             }
-            console.log(JSON.stringify(jsonBody));
             result = await client.search(jsonBody);
         }
         res.json(result.hits.hits.map(hit => hit._source));
