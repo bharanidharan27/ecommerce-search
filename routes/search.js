@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     const priceRange = decodeURIComponent(req.query.priceRange);
     const rating = decodeURIComponent(req.query.rating);
     let isFilterSearch = false;
-    if(brand === "undefined" || category === "undefined" || priceRange !== "undefined" || rating !== "undefined") isFilterSearch = true;
+    if(brand !== "undefined" || category !== "undefined" || priceRange !== "undefined" || rating !== "undefined") isFilterSearch = true;
     let result;
     try {
         if(!isFilterSearch) {
@@ -22,14 +22,24 @@ router.get('/', async (req, res) => {
                 query: {
                     multi_match: {
                         query: decodedQuery,
-                        fields: ['name^3', 'description', 'brand']
+                        fields: ['name^3', 'description', 'brand'],
+                        fuzziness: 'AUTO'
+                    }
+                },
+                aggs: {
+                    brands: {
+                        terms: { field: "brand"}
+                    },
+                    categories: {
+                        terms: { field: "category"},
                     }
                 }
             });
-        }
+        } 
         else {
             console.log("Inside Boolean Search");
             let jsonBody = {
+                index: 'products',
                 query: {
                     bool: {}
                 }
@@ -38,7 +48,8 @@ router.get('/', async (req, res) => {
                 jsonBody.query.bool.must = {};
                 jsonBody.query.bool.must.multi_match = {
                     query: decodedQuery,
-                    fields: ['name^3', 'description']
+                    fields: ['name^3', 'description'],
+                    fuzziness: 'AUTO' // Check "match clause" doc for full configuration
                 }
             }
             jsonBody.query.bool.filter = [];
@@ -70,15 +81,26 @@ router.get('/', async (req, res) => {
                     }
                 };
             }
+            jsonBody.aggs = {
+                brands: {
+                    terms: { field: "brand"}
+                },
+                categories: {
+                    terms: { field: "category"},
+                }
+            };
             result = await client.search(jsonBody);
         }
-        res.json(result.hits.hits.map(hit => hit._source));
+        let response = {};
+        response.data = result.hits.hits.map(hit => hit._source);
+        response.facets = result.aggregations;
+        res.json(response);
         
-        // console.log(result);
+        console.log(result);
     }
     catch(error) {
         console.error(error);
-        res.status(500).json({error: "Serach Failed"});
+        res.status(500).json({error: "Search Failed"});
     }
 });
 

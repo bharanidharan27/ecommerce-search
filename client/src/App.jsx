@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
+import { ChevronDown, ChevronUp, X } from 'lucide-react';
 
 function App() {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [filters, setFilters] = useState({});
+    const [selectedFilters, setSelectedFilters] = useState({});
+    const [expandedSections, setExpandedSections] = useState({
+        brands: true,
+        categories: true,
+        price_range: true,
+        ratings: true
+    });
 
-    const fetchSuggestions = async (query) => {
+    const fetchSuggestions = async () => {
         if(query.length < 2) return setSuggestions([]);
         try {
             const res = await fetch(`/api/autocomplete?query=${encodeURIComponent(query)}`);
@@ -19,18 +28,21 @@ function App() {
         }
     }
 
-    const fetchProducts = async (query) => {
+    const fetchProducts = async () => {
         try {
             if(!query.trim()) return;
             setLoading(true);
             const response = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
-            const data = await response.json();
-            setResults(data || []);
+            const json = await response.json();
+            setResults(json.data || []);
+            setFilters(json.facets || {});
+            console.log(filters);
             setLoading(false);
         }
         catch(error) {
             console.error('Search Failed', error);
             setResults([]);
+            setFilters({});
         }
     }
 
@@ -43,18 +55,111 @@ function App() {
     const handleEnter = (e) => {
         if(e.key == "Enter") {
             setSuggestions([]);
-            fetchProducts(query);
+            fetchProducts();
         }
     }
 
     const handleSelect = (query) => {
         setSuggestions([]);
-        fetchProducts(query);
+        setQuery(query);
+        fetchProducts();
     }
 
-    return (
-        <div className="min-h-screen bg-gray-50 p-6 flex flex-col items-center">
-            <h1 className="text-2xl font-bold mb-6">E-commerce Search</h1>
+    const getSelectedFilterCount = () => {
+        return Object.values(selectedFilters).reduce((total, filters) => total + filters.length, 0);
+    }
+
+    const clearAllFilters = () => {
+        setSelectedFilters({});
+        fetchProducts();
+    }
+
+    const toggleSection = (section) => {
+        setExpandedSections(prev => ({
+            ...prev,
+            [section]: !prev[section]
+        }));
+        console.log(expandedSections);
+    }
+
+    const formatFilterName = (filter) => {
+        return filter.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+    }
+
+    return (        
+            <div className="min-h-screen bg-gray-50 flex">
+
+            {/* SideBar with faceted navigation */}
+            <div className='w-80 bg-white shadow-lg p-6 overflow-y-auto'>
+                {/* Filter Header */}
+                <div className='flex items-center justify-between mb-6'>
+                    <h2 className='text-lg font-semibold text-gray -800'>Filters</h2>
+                    {getSelectedFilterCount() > 0 && (
+                        <button onClick={clearAllFilters} className='text-sm text-blue-600 hover:text-blue-800 underline'>
+                            Clear All ({getSelectedFilterCount()})
+                        </button>
+                    )}
+                </div>
+
+                {/* Active Filters */}
+                {Object.keys(selectedFilters).length > 0 && (
+                    <div className='mb-6'>
+                        <h3 className='text-sm font-medium text-gray-700 mb-2'>Active Filters:</h3>
+                        <div className='flex flex-wrap gap-2'>
+                            {Object.entries(selectedFilters).map(([filterType, values]) => {
+                                values.map(value => (
+                                    <span
+                                        key={`${filterType}-${value}`}
+                                        className='inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800'
+                                    >
+                                        {/* Unfinished Business */}
+                                    </span>
+                                ))
+                            })}
+                        </div>
+                    </div> 
+                )}
+
+                {/* Filters Section */}
+                {Object.entries(filters).map(([filter, filterData]) => (
+                    <div key={filter} className='mb-6 border-b border-gray-200 pb-4'>
+                        <button
+                            onClick={() => toggleSection(filter)}
+                            className='flex items-center justify-between w-full text-left mb-3'
+                        >
+                            <h3 className='font-medium text-gray-800'>
+                                {formatFilterName(filter)}
+                            </h3>
+                            {expandedSections[filter] ? (
+                                <ChevronUp size={16} className='text-gray-500'/>
+                            ) : (
+                                <ChevronDown size={16} className='text-gray-500'/>
+                            )}
+                        </button>
+                        {expandedSections[filter] && (
+                            <div className='space-y-2'>
+                                {filterData.buckets.map(bucket => (
+                                    <label
+                                        key={bucket.key}
+                                        className='flex items-center cursor-pointer hover:bg-gray-50 p-1 rounded'
+                                    >
+                                        <input
+                                            type="checkbox"
+                                            className='mr-2 text-blue-600 docus:ring-blue-500'
+                                        />
+                                        <span className='text-sm text-gray-700 flex-1'>
+                                            {bucket.key}
+                                        </span>
+                                        <span className='text-sm text-gray-500 ml-2'>
+                                            {bucket.doc_count}
+                                        </span>
+                                    </label>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
 
             <div className="w-full max-w-2xl relative">
                 <input
@@ -89,7 +194,7 @@ function App() {
                             <h2 className="text-lg font-semibold">{item.name}</h2>
                             <p className="text-sm text-gray-600">{item.description}</p>
                             <div className="text-sm mt-2 flex gap-4">
-                                <span className='text-blue-600 font-medium'>Price: {item.price}</span>
+                                <span className='text-blue-600 font-medium'>Price: ${item.price}</span>
                                 <span>Brand: {item.brand}</span>
                                 <span>Rating: {item.rating}</span>
                             </div>
