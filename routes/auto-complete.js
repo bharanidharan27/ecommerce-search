@@ -7,19 +7,19 @@ router.get("/", async (req, res) => {
     const {query} = req.query;
     const decodedQuery = decodeURIComponent(query);
     try {
-    const response = await client.search({
-        index: "products",
-        suggest: {
-            product_suggest: {
-                prefix: decodedQuery,
-                completion: {
-                    field: "suggest",
-                    fuzzy: true
+        const response = await client.search({
+            index: "products",
+            suggest: {
+                product_suggest: {
+                    prefix: decodedQuery,
+                    completion: {
+                        field: "suggest",
+                        fuzzy: true
+                    }
                 }
             }
-        }
-    });
-    res.json(response.suggest.product_suggest[0].options.map(ele => ele.text));
+        });
+        res.json(response.suggest.product_suggest[0].options.map(ele => ele.text));
     }
     catch(error) {
         console.error(error);
