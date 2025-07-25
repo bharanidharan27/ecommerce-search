@@ -86,8 +86,43 @@ function App() {
         return filter.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
     }
 
+    const clearFilter = (filterType, value) => {
+        setSelectedFilters(prev => {
+            const newFilters = {...prev};
+            if(value) {
+                newFilters[filterType] = newFilters[filterType].filter((item) => item !== value);
+                if(newFilters[filterType].length === 0) {
+                    delete newFilters[filterType];
+                }
+            }
+            return newFilters;
+        })
+    }
+
+    const handleFilterChange = (filter, value, checked) => {
+        setSelectedFilters(prev => {
+            const newFilters = {...prev};
+            if(!newFilters[filter]) {
+                newFilters[filter] = [];
+            }
+
+            if(checked) {
+                newFilters[filter] = [...newFilters[filter], value];
+            }
+            else {
+                newFilters[filter] = newFilters[filter].filter(item => item !== value);
+            }
+
+            if(newFilters[filter].length === 0) {
+                delete newFilters[filter];
+            }
+            return newFilters;
+        });
+        console.log(selectedFilters);
+    }
+
     return (        
-            <div className="min-h-screen bg-gray-50 flex">
+        <div className="min-h-screen bg-gray-50 flex">
 
             {/* SideBar with faceted navigation */}
             <div className='w-80 bg-white shadow-lg p-6 overflow-y-auto'>
@@ -106,16 +141,23 @@ function App() {
                     <div className='mb-6'>
                         <h3 className='text-sm font-medium text-gray-700 mb-2'>Active Filters:</h3>
                         <div className='flex flex-wrap gap-2'>
-                            {Object.entries(selectedFilters).map(([filterType, values]) => {
+                            {Object.entries(selectedFilters).map(([filterType, values]) => 
                                 values.map(value => (
                                     <span
                                         key={`${filterType}-${value}`}
                                         className='inline-flex items-center px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800'
                                     >
                                         {/* Unfinished Business */}
+                                        {formatFilterName(filterType)} : {value}
+                                        <button
+                                            onClick={() => clearFilter(filterType, value)}
+                                            className='ml-1 hover:text-blue-600'
+                                        >
+                                            <X size={12}/>
+                                        </button>
                                     </span>
                                 ))
-                            })}
+                            )}
                         </div>
                     </div> 
                 )}
@@ -145,6 +187,8 @@ function App() {
                                     >
                                         <input
                                             type="checkbox"
+                                            checked={selectedFilters[filter]?.includes(bucket.key) || false}
+                                            onChange={(e) => handleFilterChange(filter, bucket.key, e.target.checked)}
                                             className='mr-2 text-blue-600 docus:ring-blue-500'
                                         />
                                         <span className='text-sm text-gray-700 flex-1'>
@@ -161,51 +205,65 @@ function App() {
                 ))}
             </div>
 
-            <div className="w-full max-w-2xl relative">
-                <input
-                type="text"
-                className="w-full p-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Search for products..."
-                value={query}
-                onChange={handleInput}
-                onKeyDown={handleEnter}
-                />
-                {suggestions.length > 0 && (
-                <ul className="absolute z-10 bg-white shadow w-full mt-1 rounded overflow-hidden">
-                    {suggestions.map((s, i) => (
-                    <li
-                        key={i}
-                        className="p-2 hover:bg-gray-200 cursor-pointer"
-                        onClick={() => handleSelect(s)}
-                    >
-                        {s}
-                    </li>
-                    ))}
-                </ul>
-                )}
+            {/* Product Search and Listing */}
+            <div className='flex-1'>
+                <div className='max-w-4xl mx-auto'>
+                    <h1 className='text-2xl font-bold mb-6 text-center'>E-commerce Search</h1>
+                    <div className="relative mb-6">
+                        <input
+                        type="text"
+                        className="w-full p-3 border border-gray-300 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Search for products..."
+                        value={query}
+                        onChange={handleInput}
+                        onKeyDown={handleEnter}
+                        />
+                        {suggestions.length > 0 && (
+                        <ul className="absolute z-10 bg-white shadow w-full mt-1 rounded overflow-hidden">
+                            {suggestions.map((s, i) => (
+                            <li
+                                key={i}
+                                className="p-2 hover:bg-gray-200 cursor-pointer"
+                                onClick={() => handleSelect(s)}
+                            >
+                                {s}
+                            </li>
+                            ))}
+                        </ul>
+                        )}
+                    </div>
+
+                    {loading && <p className='mt-4 text-center text-gray-500'>Loading...</p>}
+
+                    {!loading && results.length > 0 && (
+                        <div>
+                            <p className='text-sm text-gray-600 mb-4'>
+                                Showing {results.length} results
+                                {Object.keys(selectedFilters).length > 0 && (
+                                    <span> with {getSelectedFilterCount()} active filters</span> 
+                                )}
+                            </p>
+                            <ul className='space-y-4'>
+                                {results.map((item) => (
+                                    <li key={item.id} className='p-4 bg-white rounded shadow hover:shadow-md transition-shadow'>
+                                        <h2 className="text-lg font-semibold">{item.name}</h2>
+                                        <p className="text-sm text-gray-600">{item.description}</p>
+                                        <div className="text-sm mt-2 flex gap-4">
+                                            <span className='text-blue-600 font-medium'>Price: ${item.price}</span>
+                                            <span>Brand: {item.brand}</span>
+                                            <span>Rating: {item.rating}</span>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {!loading && results.length === 0 && suggestions.length === 0 && query && (
+                        <p className="text-gray-600 text-center">No Results found.</p>
+                    )}
+                </div>
             </div>
-
-            {loading && <p className='mt-4 text-center text-gray-500'>Loading...</p>}
-
-            {!loading && results.length > 0 && (
-                <ul className='mt-6 space-y-4'>
-                    {results.map((item) => (
-                        <li key={item.id} className='p-4 bg-white rounded shadow'>
-                            <h2 className="text-lg font-semibold">{item.name}</h2>
-                            <p className="text-sm text-gray-600">{item.description}</p>
-                            <div className="text-sm mt-2 flex gap-4">
-                                <span className='text-blue-600 font-medium'>Price: ${item.price}</span>
-                                <span>Brand: {item.brand}</span>
-                                <span>Rating: {item.rating}</span>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            )}
-
-            {!loading && results.length === 0 && suggestions.length === 0 && query && (
-                <p className="text-gray-600 text-center">No Results found.</p>
-            )}
         </div>
     );
 }
